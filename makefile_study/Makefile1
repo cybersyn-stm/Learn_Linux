@@ -1,0 +1,21 @@
+
+
+cpp := main.c
+obj := main.o
+
+#target : prerequisties
+$(obj) : $(cpp)
+	@echo "gcc compile....."
+	@gcc -c $< -o $@
+	#gcc -c main.c -o main.o
+
+compile : $(obj)
+
+
+debug:
+	@echo $(cpp) 
+	@echo $(obj)
+clean:
+	@rm $(obj)
+
+.PHONY : clean debug

@@ -1,0 +1,12 @@
+
+
+c_srcs := $(shell find ./ -name *.c)
+#c_objs := $(subst .c,.o,$(c_srcs))
+c_objs := $(patsubst %.c,%.o,$(c_srcs))
+
+
+
+debug :
+	@echo $(c_objs)
+
+.PHONY : debug

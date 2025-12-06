@@ -1,0 +1,6 @@
+# .clang-format
+BasedOnStyle: LLVM 
+IndentWidth: 4
+ColumnLimit: 120
+AllowShortIfStatementsOnASingleLine: false
+
