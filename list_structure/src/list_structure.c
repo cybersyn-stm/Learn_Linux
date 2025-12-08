@@ -23,7 +23,7 @@ typedef struct person_data {
     char *name;
     int age;
     list_node_t node;
-} peron_data_t;
+} person_data_t;
 
 // 链表初始化
 void list_init(list_node_t *head) {
@@ -48,13 +48,13 @@ void list_remove(list_node_t *node) {
 }
 
 // 创建数据并添加链表
-peron_data_t *create_data(char *name, int age) {
-    peron_data_t *p = (peron_data_t *)malloc(sizeof(peron_data_t));
+person_data_t *create_data(char *name, int age) {
+    person_data_t *Domain = (person_data_t *)malloc(sizeof(person_data_t)); // create memoryspace
     // snprintf(p->name, sizeof(p->name), "%s", name);
-    p->name = name;
-    p->age = age;
-    list_init(&p->node);
-    return p;
+    Domain->name = name;
+    Domain->age = age;
+    list_init(&Domain->node);
+    return Domain;
 }
 // 对指定链表末尾添加数据
 list_node_t *Append_list_node(list_node_t *head, list_node_t *new_node) {
@@ -71,9 +71,9 @@ int main() {
     list_init(&head);
 
     // 创建几个人
-    peron_data_t *p1 = create_data("Alice", 25);
-    peron_data_t *p2 = create_data("Bob", 30);
-    peron_data_t *p3 = create_data("Charlie", 35);
+    person_data_t *p1 = create_data("Alice", 25);
+    person_data_t *p2 = create_data("Bob", 30);
+    person_data_t *p3 = create_data("Charlie", 35);
 
     // 添加到链表
     /*list_insert_after(&head, &p1->node);
@@ -88,7 +88,7 @@ int main() {
     list_node_t *pos;
     list_for_each(pos, &head) {
         // 通过节点指针获取person结构体
-        peron_data_t *p = container_of(pos, peron_data_t, node);
+        person_data_t *p = container_of(pos, person_data_t, node);
         printf("姓名: %s, 年龄: %d\n", p->name, p->age);
     }
 
@@ -98,7 +98,7 @@ int main() {
 
     // 再次遍历
     list_for_each(pos, &head) {
-        peron_data_t *p = container_of(pos, peron_data_t, node);
+        person_data_t *p = container_of(pos, person_data_t, node);
         printf("姓名: %s, 年龄: %d\n", p->name, p->age);
     }
 

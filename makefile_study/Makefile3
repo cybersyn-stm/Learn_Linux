@@ -1,0 +1,10 @@
+
+include_path := ./inc/
+include_path_new := ./inc/
+
+include_path := $(foreach item,$(include_path),-I$(item))
+I_flag := $(include_path_new:%=-I%)
+
+debug :
+	@echo $(include_path)
+	@echo $(I_flag)

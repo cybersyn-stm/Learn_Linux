@@ -1,0 +1,8 @@
+blah : blah.o
+	gcc blash.o -o blash 
+
+blah.o : blah.c
+	gcc -c blah.c -o blah.o 
+
+blah.c : 
+	echo "int main(){return 0;}" > blah.c
