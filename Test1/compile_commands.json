@@ -1,0 +1,41 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-I/home/cybersyn/my-c-project/Test1/include",
+      "-o",
+      "obj/add.o",
+      "src/add.c"
+    ],
+    "directory": "/home/cybersyn/my-c-project/Test1",
+    "file": "/home/cybersyn/my-c-project/Test1/src/add.c",
+    "output": "/home/cybersyn/my-c-project/Test1/obj/add.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-I/home/cybersyn/my-c-project/Test1/include",
+      "-o",
+      "obj/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/cybersyn/my-c-project/Test1",
+    "file": "/home/cybersyn/my-c-project/Test1/src/main.c",
+    "output": "/home/cybersyn/my-c-project/Test1/obj/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-I/home/cybersyn/my-c-project/Test1/include",
+      "-o",
+      "obj/sub.o",
+      "src/sub.c"
+    ],
+    "directory": "/home/cybersyn/my-c-project/Test1",
+    "file": "/home/cybersyn/my-c-project/Test1/src/sub.c",
+    "output": "/home/cybersyn/my-c-project/Test1/obj/sub.o"
+  }
+]
