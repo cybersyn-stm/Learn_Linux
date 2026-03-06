@@ -125,6 +125,12 @@ typedef struct {
     int prio;
 } Task;
 
+typedef struct {
+    int name;
+    int class;
+    int rance;
+} Task_1;
+
 static void print_task(void *data, void *user) {
     (void)user;
     Task *t = (Task *)data;
@@ -142,11 +148,13 @@ int main(void) {
     Task t2 = {.id = 2, .prio = 20};
     Task t3 = {.id = 3, .prio = 30};
     Task t4 = {.id = 4, .prio = 40};
+    Task_1 t5 = {.name = 1, .class = 2, .rance = 3};
 
     slist_push_back(&list, &pool, &t1);
     slist_push_back(&list, &pool, &t2);
     slist_push_back(&list, &pool, &t3);
     slist_push_back(&list, &pool, &t4);
+    slist_push_back(&list, &pool, &t5);
 
     printf("size=%u\n", (unsigned)list.size);
     slist_foreach(&list, print_task, NULL);
