@@ -1,6 +1,6 @@
 name := intrusive
 
-all :
+all : 
 	make -o $(name).c $(name)
 
 clean :
