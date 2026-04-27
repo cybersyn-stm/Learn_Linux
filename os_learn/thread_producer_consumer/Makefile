@@ -18,7 +18,7 @@ LDFLAGS ?= $(COMMON)
 LDLIBS  ?=
 
 all: $(APP)
-	scp $^ root@192.168.42.1:/root/
+	#scp $^ root@192.168.42.1:/root/
 
 $(APP): $(OBJS)
 	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
