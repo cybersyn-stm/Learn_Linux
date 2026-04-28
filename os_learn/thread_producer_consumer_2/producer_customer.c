@@ -40,6 +40,7 @@ void *producer(void *arg) {
         while (count == MAX)
             pthread_cond_wait(&empty, &mutex);
         put(i);
+        printf("The producer, it put : %d\n", i);
         pthread_cond_signal(&full);
         pthread_mutex_unlock(&mutex);
     }
@@ -77,6 +78,7 @@ int main(int argc, char **argv) {
     }
     loops = (int)num;
     printf("The loops: %d\n", loops);
+    printf("The producer will produce %d items, and each consumer will consume %d items.\n", loops * 2, loops);
 
     if (pthread_create(&p1, NULL, producer, NULL) != 0) {
         perror("pthread_create producer");
@@ -92,7 +94,6 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    pthread_join(p1, NULL);
     pthread_join(c1, NULL);
     pthread_join(c2, NULL);
 
